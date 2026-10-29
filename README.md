@@ -3,12 +3,9 @@
 
 [![CI Build](https://github.com/samruddhi1109/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)](https://github.com/samruddhi1109/devops-capstone-project/actions/workflows/ci-build.yaml)
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Python 3.9](https://img.shields.io/badge/Python-3.9-green.svg)](https://www.python.org/)
+The Account REST API Service is a Python Flask microservice that supports creating, reading, updating, listing, and deleting accounts.
 
-
-The Account REST API Service is a Python Flask microservice developed as part of the IBM DevOps Capstone Project. It supports creating, reading, updating, listing, and deleting accounts. The project includes automated testing, GitHub Actions continuous integration, Docker containerization, and Kubernetes deployment.
-
+The project includes automated tests, GitHub Actions continuous integration, Docker containerization, and Kubernetes deployment.
 ## Usage
 
 You should use this template to start your DevOps Capstone project. It contains all of the code that you will need to get started.
