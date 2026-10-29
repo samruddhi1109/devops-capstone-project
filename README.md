@@ -7,7 +7,7 @@
 [![Python 3.9](https://img.shields.io/badge/Python-3.9-green.svg)](https://www.python.org/)
 
 
-This repository contains the starter code for the project in [**IBM-CD0285EN-SkillsNetwork DevOps Capstone Project**](https://www.coursera.org/learn/devops-capstone-project?specialization=devops-and-software-engineering) which is part of the [**IBM DevOps and Software Engineering Professional Certificate**](https://www.coursera.org/professional-certificates/devops-and-software-engineering)
+The Account REST API Service is a Python Flask microservice developed as part of the IBM DevOps Capstone Project. It supports creating, reading, updating, listing, and deleting accounts. The project includes automated testing, GitHub Actions continuous integration, Docker containerization, and Kubernetes deployment.
 
 ## Usage
 
