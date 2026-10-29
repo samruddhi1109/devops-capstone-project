@@ -1,36 +1,4 @@
-name: CI Build
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
-  build:
-  
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: accounts
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U postgres -d accounts"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-     
 name: CI Build
 
 on:
@@ -49,11 +17,11 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: accounts
+          POSTGRES_DB: postgres
         ports:
           - 5432:5432
         options: >-
-          --health-cmd "pg_isready -U postgres -d accounts"
+          --health-cmd "pg_isready -U postgres -d postgres"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
@@ -75,11 +43,13 @@ jobs:
 
       - name: Configure database
         run: |
-          echo "DATABASE_URI=postgresql://postgres:postgres@localhost:5432/accounts" >> $GITHUB_ENV
+          echo "DATABASE_USER=postgres" >> $GITHUB_ENV
+          echo "DATABASE_PASSWORD=postgres" >> $GITHUB_ENV
+          echo "DATABASE_NAME=postgres" >> $GITHUB_ENV
+          echo "DATABASE_HOST=localhost" >> $GITHUB_ENV
 
       - name: Lint with flake8
         run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
       - name: Run tests with nosetests
         run: nosetests -v
-
